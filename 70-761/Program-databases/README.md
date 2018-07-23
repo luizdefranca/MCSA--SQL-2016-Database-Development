@@ -5,6 +5,7 @@ https://www.microsoft.com/en-us/learning/exam-70-761.aspx
 ## Program databases using Transact-SQL (25-30%)
 
 Topic|Progress
+-----|--------
 Create database programmability objects by using Transact-SQL|
 Implement error handling and transactions|
 Implement data types and NULLs|
