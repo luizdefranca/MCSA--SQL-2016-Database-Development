@@ -25,8 +25,6 @@ INSERT INTO dbo.MyRightTable(r_id, r_value) VALUES (1, 'R One');
 INSERT INTO dbo.MyRightTable(r_id, r_value) VALUES (2, 'R Two');
 INSERT INTO dbo.MyRightTable(r_id, r_value, r_l_id) VALUES (3, 'R L Three', 3);
 
-COMMIT;
-
 -- -----------------------------------------------------------------------------------------
 --
 -- MySimpleProducts
@@ -36,7 +34,7 @@ DROP TABLE IF EXISTS dbo.MySimpleProducts;
 CREATE TABLE dbo.MySimpleProducts(
   p_id       INT           NOT NULL,
   p_name     VARCHAR(50)   NOT NULL,
-  p_colour   VARCHAR(10)   NOT NULL,
+  p_colour   VARCHAR(10)   ,
   p_cost     NUMERIC(7,2)  NOT NULL,
   CONSTRAINT MySimpleProducts_PK PRIMARY KEY (p_id)
 );
@@ -52,3 +50,5 @@ INSERT INTO dbo.MySimpleProducts(p_id, p_name, p_colour, p_cost) VALUES (8 , 'P8
 INSERT INTO dbo.MySimpleProducts(p_id, p_name, p_colour, p_cost) VALUES (9 , 'P9'  , 'BLUE' , 991);
 INSERT INTO dbo.MySimpleProducts(p_id, p_name, p_colour, p_cost) VALUES (10, 'P10' , 'RED'  , 1023);
 INSERT INTO dbo.MySimpleProducts(p_id, p_name, p_colour, p_cost) VALUES (11, 'P102', 'ROSE GOLD'  , 8888);
+INSERT INTO dbo.MySimpleProducts(p_id, p_name, p_colour, p_cost) VALUES (12, 'P201', NULL  , 10000);
+INSERT INTO dbo.MySimpleProducts(p_id, p_name, p_colour, p_cost) VALUES (13, 'P202', NULL  , 20000);
