@@ -1,0 +1,28 @@
+<NotepadPlus>
+    <Project name="70-761 - Querying Data with Transact-SQL">
+        <Folder name="Manage data with Transaction-SQL">
+            <File name="70-761\Manage-data\Samples\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
+            <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
+            <File name="70-761\Manage-data\Samples\T-SQL-FROM-JOIN-BASICS.sql" />
+        </Folder>
+        <Folder name="Query data with advanced Transact-SQL components" />
+        <Folder name="Program databases using Transact-SQL" />
+    </Project>
+    <Project name="Transact-SQL Reference">
+        <Folder name="SELECT">
+            <Folder name="Column Aliases">
+                <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
+            </Folder>
+            <Folder name="Joins">
+                <File name="70-761\Manage-data\Samples\T-SQL-FROM-JOIN-BASICS.sql" />
+            </Folder>
+            <Folder name="Table Value Constructor (VALUES)">
+                <File name="70-761\Manage-data\Samples\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
+            </Folder>
+            <Folder name="Table Expressions and Common Table Expressions (CTE)">
+                <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
+                <File name="70-761\Manage-data\Samples\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
+            </Folder>
+        </Folder>
+    </Project>
+</NotepadPlus>
