@@ -46,3 +46,33 @@ SELECT salesOrderId,
   FROM SalesLT.SalesOrderDetail;
   
 -- Alternative aliasing with table expressions and common table expressions
+-- (See Kindle - T-SQL Fundamentals page 164 - location 5322)
+-- The table expression below specifies an alias for each of its 3 columns
+SELECT *
+  FROM (
+    SELECT salesOrderId         AS orderId, 
+           productId            AS product,
+           orderQty * unitPrice AS price
+      FROM SalesLT.SalesOrderDetail
+ ) AS purchaseOrders;  
+ 
+-- This could also be written using a different form of aliasing where you
+-- specify all target column names in parenthesis () following the table
+-- expressions name
+ SELECT *
+  FROM (
+    SELECT salesOrderId, 
+           productId,
+           orderQty * unitPrice
+      FROM SalesLT.SalesOrderDetail
+ ) AS purchaseOrders(orderId, product, price);  
+ 
+-- Or, as a CTE (common table expression)
+WITH purchaseOrders(orderId, product, price) AS (
+    SELECT salesOrderId, 
+           productId,
+           orderQty * unitPrice
+      FROM SalesLT.SalesOrderDetail
+)
+SELECT *
+  FROM purchaseOrders;      
