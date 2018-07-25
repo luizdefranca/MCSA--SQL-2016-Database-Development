@@ -94,3 +94,11 @@ SELECT p_colour
  ORDER BY p_colour
  UNION
 SELECT 'YELLOW';
+
+-- The ORDER BY should be places after ALL the SELECT statements.  Note that the column
+-- names come from the first statement in the UNION
+SELECT p_colour
+  FROM dbo.MySimpleProducts a
+ UNION
+SELECT 'YELLOW' IamYellow
+ ORDER BY p_colour;
