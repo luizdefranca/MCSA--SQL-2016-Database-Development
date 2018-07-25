@@ -8,6 +8,9 @@
             <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
             <File name="70-761\Manage-data\Samples\T-SQL-FROM-JOIN-BASICS.sql" />
             <File name="70-761\Manage-data\Samples\T-SQL-SET-UNION-UNION-ALL.sql" />
+            <File name="70-761\Manage-data\Samples\T-SQL-CREATE-FUNCTION-BASICS-1.sql" />
+            <File name="70-761\Manage-data\Samples\T-SQL-GO.sql" />
+            <File name="70-761\Manage-data\Samples\T-SQL-SELECT-LOCAL-VARIABLE.sql" />
         </Folder>
         <Folder name="Query data with advanced Transact-SQL components" />
         <Folder name="Program databases using Transact-SQL" />
@@ -30,6 +33,14 @@
             <Folder name="Set Operations">
                 <File name="70-761\Manage-data\Samples\T-SQL-SET-UNION-UNION-ALL.sql" />
             </Folder>
+        </Folder>
+        <Folder name="Stored Programs">
+            <Folder name="Functions">
+                <File name="70-761\Manage-data\Samples\T-SQL-CREATE-FUNCTION-BASICS-1.sql" />
+            </Folder>
+        </Folder>
+        <Folder name="Variables">
+            <File name="70-761\Manage-data\Samples\T-SQL-SELECT-LOCAL-VARIABLE.sql" />
         </Folder>
     </Project>
 </NotepadPlus>
