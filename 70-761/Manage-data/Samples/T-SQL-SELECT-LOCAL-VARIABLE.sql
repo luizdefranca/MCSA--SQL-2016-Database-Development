@@ -25,11 +25,12 @@
 -- One SELECT statement can initialize multiple local variables.
 --
 
--- Using SELECT @local_variable to return a single value
+-- Using SELECT @local_variable to return a single value.
+-- Declare the variable and assign it a default of NONE
 DECLARE @colour VARCHAR(50);
 SELECT @colour = 'NONE';
 
--- This SELECT statement returns no rows
+-- This SELECT statement returns no rows...
 SELECT @colour = p_colour
   FROM dbo.MySimpleProducts
  WHERE p_id = -1000;
@@ -37,10 +38,46 @@ SELECT @colour = p_colour
 --So the colour variable retains the value NONE
 SELECT @colour AS 'Colour 1';
 
--- This SELECT statement returns 1 row
+-- This SELECT statement returns 1 row...
 SELECT @colour = p_colour
   FROM dbo.MySimpleProducts
  WHERE p_id = 1;
 
 --So the colour variable is set to the value RED
 SELECT @colour AS 'Colour 2';
+
+--This SELECT statement is a scalar subquery and returns no rows
+--Note the difference to the preceding examples...
+SELECT @colour = (SELECT p_colour 
+                    FROM dbo.MySimpleProducts
+                   WHERE p_id = -1000);
+
+--So the colour variable is set to NULL
+SELECT @colour AS 'Colour 3';  
+
+--This SELECT returns more than 1 row...
+SELECT @colour = p_colour
+  FROM dbo.MySimpleProducts
+ WHERE p_colour IS NOT NULL
+ ORDER BY p_colour ASC;
+
+--So the colour variable is set to the last value returned by the query
+SELECT @colour AS 'Colour 4'; 
+
+-- Using SELECT @local_variable to return a multiple values
+-- Declare the variables and assign them defaults
+DECLARE @colour VARCHAR(50), 
+        @cost   NUMERIC(7,2);
+SET @colour = 'NONE';
+SET @cost = 1.99;
+
+-- This SELECT statement returns 1 row...
+SELECT @colour = p_colour,
+       @cost = p_cost
+  FROM dbo.MySimpleProducts
+ WHERE p_id = 1;
+
+ --So the colour variable is set to RED and cost to 123.00
+SELECT @colour AS 'Colour', 
+       @cost AS 'Cost';
+    
