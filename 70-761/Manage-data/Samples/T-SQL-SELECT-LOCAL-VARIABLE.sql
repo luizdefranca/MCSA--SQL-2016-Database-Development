@@ -64,6 +64,8 @@ SELECT @colour = p_colour
 --So the colour variable is set to the last value returned by the query
 SELECT @colour AS 'Colour 4'; 
 
+GO
+
 -- Using SELECT @local_variable to return a multiple values
 -- Declare the variables and assign them defaults
 DECLARE @colour VARCHAR(50), 
@@ -81,3 +83,4 @@ SELECT @colour = p_colour,
 SELECT @colour AS 'Colour', 
        @cost AS 'Cost';
     
+GO
