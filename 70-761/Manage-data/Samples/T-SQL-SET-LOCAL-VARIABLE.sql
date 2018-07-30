@@ -92,14 +92,45 @@ OPEN @cursorVar;
 FETCH NEXT FROM @cursorVar INTO @colour, @count;
 WHILE @@FETCH_STATUS = 0
 BEGIN
-  FETCH NEXT FROM @cursorVar INTO @colour, @count;	
-
   SELECT @colour AS 'CF Colour', @count AS 'CF Count';
+  FETCH NEXT FROM @cursorVar INTO @colour, @count;	
 END;
 
 CLOSE @cursorVar;
 DEALLOCATE @cursorVar;
 GO
 
+--Repeats the above example but also uses a table variable
+DECLARE @cursorVar CURSOR,
+        @colour VARCHAR(50),
+        @count  INT;
 
+DECLARE @colourTable TABLE(
+  colour  VARCHAR(50),
+  count   INT
+);
 
+SET @cursorVar = CURSOR SCROLL DYNAMIC
+FOR SELECT p_colour AS 'C Colour', COUNT(*) AS '# of Products'
+      FROM dbo.MySimpleProducts GROUP BY p_colour;
+      
+OPEN @cursorVar;
+FETCH NEXT FROM @cursorVar INTO @colour, @count;
+WHILE @@FETCH_STATUS = 0
+BEGIN
+  INSERT INTO @colourTable(colour, count) VALUES (@colour, @count);
+  FETCH NEXT FROM @cursorVar INTO @colour, @count;	
+END;
+
+SELECT colour AS 'TV Colour', count AS 'TV Count'
+  FROM @colourTable;
+
+CLOSE @cursorVar;
+DEALLOCATE @cursorVar;
+GO  
+
+--Assigning a value from a scalar query
+DECLARE @count INT;
+SET @count = (SELECT COUNT(*) FROM dbo.MySimpleProducts);
+SELECT @count AS 'Row Count';
+GO
