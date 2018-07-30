@@ -5,3 +5,7 @@
 ## GitHub References
 
 [GuiHub Guides - Mastering Markdown](https://guides.github.com/features/mastering-markdown)
+
+### Other References
+
+[Difference between SQL Server and Azure SQL Databases](https://docs.microsoft.com/en-gb/azure/sql-database/sql-database-transact-sql-information)
