@@ -70,3 +70,33 @@ SELECT p_colour AS 'Color', COUNT(*) AS 'No. of Products'
  WHERE p_colour IN (@red, @blue)
  GROUP BY p_colour;
 GO
+
+--Declare a variable of type table
+BEGIN TRANSACTION; 
+DECLARE @productTable TABLE(
+  name     VARCHAR(50),
+  oldCost  NUMERIC(7, 2),
+  newCost  NUMERIC(7, 2)
+);
+
+WITH cheapestProducts AS (
+      SELECT *
+	    FROM dbo.MySimpleProducts
+	   ORDER BY p_cost ASC
+	   OFFSET 0 ROWS FETCH FIRST 5 ROWS ONLY
+    )
+UPDATE cheapestProducts
+   SET p_cost *= 2.1
+ OUTPUT DELETED.p_colour,
+        DELETED.p_cost,
+		INSERTED.p_cost
+   INTO @productTable;
+
+SELECT name AS 'Product', oldCost AS 'Old Cost', newCost AS 'New Cost'
+  FROM @productTable;
+
+ ROLLBACK TRANSACTION;
+ GO
+
+
+SELECT * FROM dbo.MySimpleProducts;
