@@ -1,46 +1,32 @@
 <NotepadPlus>
     <Project name="70-761 - Querying Data with Transact-SQL">
         <Folder name="Setup">
-            <File name="70-761\Setup\T-SQL-MY-GENERIC-SAMPLE-TABLES.sql" />
+            <File name="Scripts\T-SQL-MY-GENERIC-SAMPLE-TABLES.sql" />
+            <File name="Scripts\T_SQL_MY_ORA_HR_SCHEMA.sql" />
         </Folder>
         <Folder name="Manage data with Transaction-SQL">
-            <File name="70-761\Manage-data\Samples\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
-            <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
-            <File name="70-761\Manage-data\Samples\T-SQL-FROM-JOIN-BASICS.sql" />
-            <File name="70-761\Manage-data\Samples\T-SQL-SET-UNION-UNION-ALL.sql" />
-            <File name="70-761\Manage-data\Samples\T-SQL-CREATE-FUNCTION-BASICS-1.sql" />
-            <File name="70-761\Manage-data\Samples\T-SQL-GO.sql" />
-            <File name="70-761\Manage-data\Samples\T-SQL-SELECT-LOCAL-VARIABLE.sql" />
+            <Folder name="Create Transact-SQL SELECT queries">
+                <Folder name="Identify proper SELECT query structure">
+                    <File name="Scripts\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
+                </Folder>
+                <Folder name="Write specific queries to satisfy business requirements" />
+                <Folder name="Construct results from multiple queries using set operators">
+                    <File name="Scripts\T-SQL-SET-UNION-UNION-ALL.sql" />
+                </Folder>
+                <Folder name="Distinguish between UNION and UNION ALL behavior">
+                    <File name="Scripts\T-SQL-SET-UNION-UNION-ALL.sql" />
+                </Folder>
+                <Folder name="Identify the query that would return expected results based on provided table structure and/or data" />
+            </Folder>
+            <Folder name="Query multiple tables by using joins">
+                <Folder name="Write queries with join statements based on provided tables, data, and requirements" />
+                <Folder name="Determine proper usage of INNER JOIN, LEFT/RIGHT/FULL OUTER JOIN, and CROSS JOIN" />
+                <Folder name="Construct multiple JOIN operators using AND and OR" />
+                <Folder name="Determine the correct results when presented with multi-table SELECT statements and source data" />
+                <Folder name="Write queries with NULLs on joins" />
+            </Folder>
         </Folder>
         <Folder name="Query data with advanced Transact-SQL components" />
         <Folder name="Program databases using Transact-SQL" />
-    </Project>
-    <Project name="Transact-SQL Reference">
-        <Folder name="SELECT">
-            <Folder name="Column Aliases">
-                <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
-            </Folder>
-            <Folder name="Joins">
-                <File name="70-761\Manage-data\Samples\T-SQL-FROM-JOIN-BASICS.sql" />
-            </Folder>
-            <Folder name="Table Value Constructor (VALUES)">
-                <File name="70-761\Manage-data\Samples\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
-            </Folder>
-            <Folder name="Table Expressions and Common Table Expressions (CTE)">
-                <File name="70-761\Manage-data\Samples\T-SQL-COLUMN-ALIASES.sql" />
-                <File name="70-761\Manage-data\Samples\T-SQL-SELECT-STATEMENT-LOGICAL-ORDER.sql" />
-            </Folder>
-            <Folder name="Set Operations">
-                <File name="70-761\Manage-data\Samples\T-SQL-SET-UNION-UNION-ALL.sql" />
-            </Folder>
-        </Folder>
-        <Folder name="Stored Programs">
-            <Folder name="Functions">
-                <File name="70-761\Manage-data\Samples\T-SQL-CREATE-FUNCTION-BASICS-1.sql" />
-            </Folder>
-        </Folder>
-        <Folder name="Variables">
-            <File name="70-761\Manage-data\Samples\T-SQL-SELECT-LOCAL-VARIABLE.sql" />
-        </Folder>
     </Project>
 </NotepadPlus>
