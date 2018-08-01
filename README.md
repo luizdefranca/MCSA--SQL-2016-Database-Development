@@ -1,6 +1,8 @@
 # MCSA SQL 2016 Database Development
 
-## [Exam 70-761 - Querying Data with Transact-SQL](https://github.com/VR40Disc/MCSA--SQL-2016-Database-Development/tree/master/70-761)
+## Exams
+
+### [Exam 70-761 - Querying Data with Transact-SQL](https://github.com/VR40Disc/MCSA--SQL-2016-Database-Development/blob/master/Exam%2070-761%20-%20Querying%20Data%20with%20Transact-SQL.md)
 
 ## GitHub References
 
