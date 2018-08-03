@@ -7,9 +7,9 @@ DROP SEQUENCE IF EXISTS ora_hr.employees_seq;
 
 GO
 
---Departments has a FK to employees
+--Departments has a FK to employees (U = Table (user-defined))
 DECLARE @deptTableId INT;
-SET @deptTableId = (SELECT OBJECT_ID('ORA_HR.DEPARTMENTS'));
+SET @deptTableId = (SELECT OBJECT_ID('ORA_HR.DEPARTMENTS', N'U'));
 
 IF @deptTableId IS NOT NULL
   ALTER TABLE ora_hr.departments
@@ -20,7 +20,18 @@ GO
 DROP VIEW IF EXISTS ora_hr.emp_details_view;
 
 DROP TABLE IF EXISTS ora_hr.job_history;
-DROP TABLE IF EXISTS ora_hr.employees;
+
+--The employees table is temporal (versioned)
+IF OBJECT_ID('ORA_HR.EMPLOYEES', N'U') IS NOT NULL
+BEGIN
+  IF OBJECTPROPERTY(OBJECT_ID('ORA_HR.EMPLOYEES', N'U'), N'TableTemporalType') = 2
+    ALTER TABLE ora_hr.employees
+      SET (SYSTEM_VERSIONING = OFF);
+
+  DROP TABLE IF EXISTS ora_hr.employeesHistory, ora_hr.employees;
+
+END;
+
 DROP TABLE IF EXISTS ora_hr.jobs;
 DROP TABLE IF EXISTS ora_hr.departments;
 DROP TABLE IF EXISTS ora_hr.locations;
@@ -132,7 +143,8 @@ ALTER TABLE ora_hr.jobs ADD CONSTRAINT job_id_pk PRIMARY KEY(job_id);
 -- Create the EMPLOYEES table to hold the employee personnel 
 -- information for the company.
 -- HR.EMPLOYEES has a self referencing foreign key to this table.
-       
+--
+-- Update - The employees table has been made temporal       
 CREATE TABLE ora_hr.employees
    ( employee_id    INT         CONSTRAINT emp_id_nn NOT NULL
    , first_name     VARCHAR(20)
@@ -145,12 +157,16 @@ CREATE TABLE ora_hr.employees
    , commission_pct NUMERIC(2,2)
    , manager_id     INT
    , department_id  INT
+   , sysstart       DATETIME2(0) GENERATED ALWAYS AS ROW START HIDDEN NOT NULL
+   , sysend         DATETIME2(0) GENERATED ALWAYS AS ROW END   HIDDEN NOT NULL
+   , PERIOD FOR SYSTEM_TIME(sysstart, sysend)
+   , CONSTRAINT emp_emp_id_pk PRIMARY KEY (employee_id)
    , CONSTRAINT emp_salary_min CHECK (salary > 0) 
    , CONSTRAINT emp_email_uk UNIQUE (email)
-   ) ;
-          
-ALTER TABLE ora_hr.employees
-  ADD CONSTRAINT emp_emp_id_pk PRIMARY KEY (employee_id);
+   ) 
+   WITH (
+     SYSTEM_VERSIONING = ON (HISTORY_TABLE = ora_hr.employeesHistory)
+   );         
 
 ALTER TABLE ora_hr.employees  
   ADD CONSTRAINT emp_dept_fk
