@@ -25,6 +25,12 @@ sp_helplanguage English;
 GO
 
 --
+-- @@SERVERNAME returns the name of the local server that is running SQL server
+--
+SELECT @@SERVERNAME;
+GO
+
+--
 -- @@SPID returns the session ID of the current user process (note this is also listed in
 -- the SSMS Properties window in the Connection Details section).
 --
@@ -36,12 +42,6 @@ GO
 --
 SELECT @@VERSION AS ss_version;
 GO
-
---
---
---
-SET CONCAT_NULL_YIELDS_NULL OFF; 
-SELECT @@OPTIONS;
 
 
 
