@@ -3,33 +3,26 @@
 --
 --
 -- Exact numbers
-DROP TABLE IF EXISTS dbo.my_int_values;
+--
 DROP TABLE IF EXISTS dbo.my_money_values;
 DROP TABLE IF EXISTS dbo.my_decimal_values;
 
+--
+-- Integers
+--
+-- Exact number data types that use integer data.  To save space use the smallest data type that
+-- can reliably contain all possible values.  For example TINYINT would be suitable for a person's
+-- age but not for the number of days in a year.
+--
+DROP TABLE IF EXISTS dbo.my_int_values;
+
 CREATE TABLE dbo.my_int_values(
   my_comment     VARCHAR(100), 
-  my_bigint      BIGINT,
-  my_int         INT,
-  my_smallint    SMALLINT,
-  my_tinyint     TINYINT
+  my_bigint      BIGINT,        /* Storage 8 bytes */
+  my_int         INT,           /* Storage 4 bytes */
+  my_smallint    SMALLINT,      /* Storage 2 bytes */
+  my_tinyint     TINYINT        /* Storage 1 byte  */
 );
-
-CREATE TABLE dbo.my_money_values (
-  my_comment     VARCHAR(100),
-  my_money       MONEY,
-  my_smallmoney  SMALLMONEY
-)
-
---decimal and numeric are synonyms and can be used interchangeably
-CREATE TABLE dbo.my_decimal_values (
-  my_max_precision1         DECIMAL(38),
-  my_max_precision2         NUMERIC(38,0),
-  my_precision_and_scale1   DECIMAL(10,5),
-  my_precision_and_scale2   NUMERIC(5,5)
-);
-
-GO
 
 BEGIN TRANSACTION
 
@@ -53,6 +46,35 @@ INSERT INTO dbo.my_int_values(
   CAST(255 AS TINYINT)
 );
 
+COMMIT TRANSACTION
+
+SELECT * FROM dbo.my_int_values;
+
+GO
+
+sp_help [dbo.my_int_values]
+
+GO
+
+
+CREATE TABLE dbo.my_money_values (
+  my_comment     VARCHAR(100),  /* Storage 8 bytes */
+  my_money       MONEY,
+  my_smallmoney  SMALLMONEY
+)
+
+--decimal and numeric are synonyms and can be used interchangeably
+CREATE TABLE dbo.my_decimal_values (
+  my_max_precision1         DECIMAL(38),
+  my_max_precision2         NUMERIC(38,0),
+  my_precision_and_scale1   DECIMAL(10,5),
+  my_precision_and_scale2   NUMERIC(5,5)
+);
+
+GO
+
+
+
 INSERT INTO dbo.my_money_values(
   my_comment,
   my_money, 
@@ -73,15 +95,22 @@ INSERT INTO dbo.my_decimal_values(
   my_precision_and_scale1,
   my_precision_and_scale2
 ) VALUES (
-  
-)
+  123456789012345678901234567890123456,
+  654321098765432109876543210987654321,
+  54321.12345,
+  0.12345
+), (
+  NULL,
+  NULL,
+  54321.12312312,
+  1.2321
+);
 
 
 COMMIT TRANSACTION
 
 GO
 
-SELECT * FROM dbo.my_int_values;
-
 SELECT * FROM dbo.my_money_values;
 
+SELECT * FROM dbo.my_decimal_values;
