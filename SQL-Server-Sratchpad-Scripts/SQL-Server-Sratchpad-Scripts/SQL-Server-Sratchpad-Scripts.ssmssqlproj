@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQL-Server-Sratchpad-Scripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="sandboxserver-kk.database.windows.net:karlk">
+          <Created>2018-09-06T08:23:39.1591127+01:00</Created>
+          <Type>SQL</Type>
+          <Server>sandboxserver-kk.database.windows.net</Server>
+          <UserName>karlk</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="INSERT-Basic.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>INSERT-Basic.sql</FullPath>
+        </FileNode>
+        <FileNode Name="INSERT-From-Other-Tables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>INSERT-From-Other-Tables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="INSERT-Handling-Default-Values.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>INSERT-Handling-Default-Values.sql</FullPath>
+        </FileNode>
+        <FileNode Name="INSERT-Identity-Columns.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>INSERT-Identity-Columns.sql</FullPath>
+        </FileNode>
+        <FileNode Name="INSERT-Objects-Other-Than-Tables.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>INSERT-Objects-Other-Than-Tables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery4.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>SQLScratchpad1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad2_AccountsOrders_etc.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLScratchpad2_AccountsOrders_etc.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad3.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLScratchpad3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad4_NULLSandJoins.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLScratchpad4_NULLSandJoins.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad4_ScalarFunctionCallsFromSQL.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLScratchpad4_ScalarFunctionCallsFromSQL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad4_TableFunctionCallsFromSQL.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLScratchpad4_TableFunctionCallsFromSQL.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLScratchpad5_AggregateFunctions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>SQLScratchpad5_AggregateFunctions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="table-trigger-test.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>table-trigger-test.sql</FullPath>
+        </FileNode>
+        <FileNode Name="temporal-table-test.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>temporal-table-test.sql</FullPath>
+        </FileNode>
+        <FileNode Name="UPDATE-Basics.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>UPDATE-Basics.sql</FullPath>
+        </FileNode>
+        <FileNode Name="UPDATE-Capturing-Results-Of-An-Update.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>UPDATE-Capturing-Results-Of-An-Update.sql</FullPath>
+        </FileNode>
+        <FileNode Name="UPDATE-From-a-Stored-Procedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>UPDATE-From-a-Stored-Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="UPDATE-Objects-Other-Than-Tables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sandboxserver-kk.database.windows.net:False:karlk</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sandboxserver-kk.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>karlk</AssociatedConnUserName>
+          <FullPath>UPDATE-Objects-Other-Than-Tables.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
